@@ -12,7 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Comment extends Auditable {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NonNull
     private String body;

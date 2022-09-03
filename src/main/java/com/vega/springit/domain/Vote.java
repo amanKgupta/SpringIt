@@ -2,20 +2,19 @@ package com.vega.springit.domain;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@NoArgsConstructor
 @RequiredArgsConstructor
 @Getter
 @Setter
-@ToString
-@NoArgsConstructor
-public class Vote {
+public class Vote extends Auditable {
+
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NonNull
     private int vote;
 
 }
